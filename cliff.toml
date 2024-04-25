@@ -1,12 +1,15 @@
 [template]
-commit = '''
-{{ commit.summary | strip }}
-'''
-
-header = '''
-## [{{ tag.name }}] - {{ tag.date | date:"%Y-%m-%d" }}
-'''
-
-subheader = '''
-### {{ group.name }}
-'''
+commit = '''- {{ commit.author.name }}: {{ commit.summary }}'''
+header = '''## [{{ tag.name }}] - {{ tag.date | date:"%Y-%m-%d" }}'''
+subheader = '''### {{ group.name }}'''
+body = """
+{{#each group}}
+{{#if commits}}
+{{subheader}}
+{{#each commits}}
+{{> commit}}
+{{/each}}
+{{/if}}
+{{/each}}
+"""
+footer = '''Generated with :heart: by git-cliff'''
