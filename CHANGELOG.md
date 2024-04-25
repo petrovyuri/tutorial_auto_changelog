@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - *(app)* Добавить файл для тестирования
 
+### 🚜 Refactor
+
+- *(git)* Проверка refactor
+
 ### ⚙️ Miscellaneous Tasks
 
 - *(ci)* Проверка ci
