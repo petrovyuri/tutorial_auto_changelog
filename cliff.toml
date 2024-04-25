@@ -1,0 +1,21 @@
+[changelog]
+# Форматирование заголовка
+title = "Мой форматированный Changelog"
+# Формат записи
+template = """
+{{#each commit_groups}}
+{{#if title}}{{title}}{{else}}Miscellaneous{{/if}}
+{{#each commits}}
+- {{header}}
+{{/each}}
+{{/each}}
+"""
+
+[[commit_group]]
+# Группировка по типу
+title = "Features"
+filter_type = "feat"
+
+[[commit_group]]
+title = "Bug Fixes"
+filter_type = "fix"
