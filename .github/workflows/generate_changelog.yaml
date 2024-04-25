@@ -21,8 +21,10 @@ jobs:
       # Использование действия checkout для клонирования репозитория  
     - uses: actions/checkout@v2  
       # Выкачивание всей истории коммитов, необходимо для корректной работы многих инструментов генерации changelog
-      with:
-        fetch-depth: 0  
+      with: 
+        config: cliff.toml
+        args: -vv --latest --no-exec --github-repo ${{ github.repository }} 
+        fetch-depth: 0
     
     # Название шага
     - name: Download and Install git-cliff
